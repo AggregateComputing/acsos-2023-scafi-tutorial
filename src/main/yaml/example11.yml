@@ -1,0 +1,53 @@
+incarnation: scafi
+
+variables:
+  random: &random
+    min: 0
+    max: 5
+    step: 1
+    default: 3
+  range: &range
+    formula: 0.75
+    language: scala
+
+_constants:
+  retentionTime: &retentionTime 5.0
+
+seeds:
+  scenario: *random
+  simulation: *random
+
+network-model:
+  type: ConnectWithinDistance # *connectionType
+  parameters: [*range]
+
+_reactions:
+  - program: &program
+      - time-distribution: 0.3
+        type: Event
+        actions:
+          - type: RunScafiProgram
+            parameters: [it.unibo.examples.Example11, *retentionTime]
+      - program: send
+
+deployments: ## i.e, how to place nodes
+  - type: Grid
+    parameters: [ -5, -5, 5, 5, 0.5, 0.5, 0.1, 0.1 ]
+    programs: ## the reactions installed in each node
+      - *program
+    contents:
+      - molecule: destination
+        concentration: false
+      - molecule: source
+        concentration: false
+      - molecule: obstacle
+        concentration: false
+      - in: { type: Rectangle, parameters: [ -4, -4, 1, 1 ] }
+        molecule: source
+        concentration: true
+      - in: { type: Rectangle, parameters: [ 4, 4, 1, 1 ] }
+        molecule: destination
+        concentration: true
+      - in: { type: Rectangle, parameters: [ -4, 0, 10, 1 ] }
+        molecule: obstacle
+        concentration: true

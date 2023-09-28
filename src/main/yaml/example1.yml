@@ -1,0 +1,37 @@
+incarnation: scafi # the incarnation used by the simulator to execute the simulation
+
+variables: # the variables used in the simulation, usefull for batch simulation
+  random: &random
+    min: 0
+    max: 5
+    step: 1
+    default: 3
+  range: &range
+    formula: 1.5
+    language: scala
+
+_constants:
+  retentionTime: &retentionTime 5.0
+
+seeds:
+  scenario: *random
+  simulation: *random
+
+network-model:
+  type: ConnectWithinDistance
+  parameters: [*range]
+
+_reactions:
+  - program: &program
+      - time-distribution: 0.3
+        type: Event
+        actions:
+          - type: RunScafiProgram
+            parameters: [it.unibo.examples.Example1, *retentionTime]
+      - program: send
+
+deployments: ## i.e, how to place nodes
+  type: Grid
+  parameters: [ -5, -5, 5, 5, 1, 1, 0.3, 0.3 ]
+  programs: ## the reactions deployed in each node
+    - *program

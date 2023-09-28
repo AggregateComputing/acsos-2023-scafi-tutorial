@@ -3,7 +3,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "reconfiguration-experiments"
+rootProject.name = "acsos-2023-scafi-tutorial"
 
 gradleEnterprise {
     buildScan {
