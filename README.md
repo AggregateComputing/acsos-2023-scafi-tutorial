@@ -60,7 +60,14 @@ then, to **start** the simulation, press **`P`**.
 * **Example 14**: SGCG block, aka Self-organising Coordination Regions (SCR) pattern 
 
 
+## Alchemist usage
 
+Here are some [key commands](http://alchemistsimulator.github.io/reference/swing/) to interact with a running simulation. 
+
+- **`p`** to start (or pause) a simulation
+- **`l`** to show/hide links
+- **`s`** to enter/exit in "select mode", useful to move devices with **`o`** + drag&drop.
+- **double click** on a node to see its state (**`m`** to show/hide node marker)
 
 ## Today tutorial
 The main goal of this tutorial is to showcase how to program in ScaFi leveraging the Alchemist 
