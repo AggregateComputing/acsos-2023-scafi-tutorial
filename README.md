@@ -3,12 +3,19 @@
 
 ## Prerequisites
 
-A [Gradle-compatible Java version](https://docs.gradle.org/current/userguide/compatibility.html).
+* a [Gradle-compatible Java version](https://docs.gradle.org/current/userguide/compatibility.html).
 
 ## How to launch
 
+First of all, clone the repository
+
+```bash
+git clone git@github.com:AggregateComputing/acsos-2023-scafi-tutorial.git
+```
+
 Simulations can be included in the `src/main/yaml` folder,
 and executed via the `runAll` Gradle task.
+You can also run `./gradlew tasks` to show available tasks.
 
 In this tutorial we provide different simulations to show the main operator of ScaFi.
 For each YAML file in `src/main/yaml` a task `runFileName` will be created.
@@ -27,6 +34,29 @@ For further information about the gui, see the [Alchemist documentation](https:/
 
 Note that the first launch will take some time, since Gradle will download all the required files.
 They will get cached in the user's home folder (as per Gradle normal behavior).
+
+## Examples
+
+```./gradlew runExample<N>```
+(where `<N>` is a number).
+
+* **Example 1**: constant value
+* **Example 2**: constant expression
+* **Example 3**: sensor access (static value)
+* **Example 4**: sensor access (usually dynamic)
+* **Example 5**: sharing data with neighbours
+* **Example 6**: stateful transformation (round counting)
+* **Example 7**: branch to create non-communicating subcomputations
+* **Example 8**: self-healing gradient algorithm 
+* **Example 9**: gradient with obstacles + functional abstraction
+* **Example 10**: self-healing channel
+* **Example 11**: channel with obstacles
+* **Example 12**: information collection into a sink
+* **Example 13**: sparse choice (leader election)
+* **Example 14**: SGCG block, aka Self-organising Coordination Regions (SCR) pattern 
+
+
+
 
 ## Today tutorial
 The main goal of this tutorial is to showcase how to program in ScaFi leveraging the Alchemist 
