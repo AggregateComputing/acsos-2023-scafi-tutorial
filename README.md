@@ -36,5 +36,5 @@ We will start from the basics, and then we will move to more advanced topics
 The examples are in the folder `it.unibo.examples`
 
 ## Advanced pointers
-- [MacroSwarm]: https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour
-- [Field Informed RL]: https://github.com/AggregateComputing/experiment-2023-acsos-field-informed-rl
+- MacroSwarm: https://github.com/AggregateComputing/experiment-2023-coordination-swarm-behaviour
+- Field Informed RL: https://github.com/AggregateComputing/experiment-2023-acsos-field-informed-rl
