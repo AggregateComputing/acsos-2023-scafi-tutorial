@@ -17,6 +17,8 @@ Simulations can be included in the `src/main/yaml` folder,
 and executed via the `runAll` Gradle task.
 You can also run `./gradlew tasks` to show available tasks.
 
+To **start** a simulation (`./gradlew runExample<N>`) once the graphical user interface appears, press key **`P`** and use the mouse and mouse wheel to move/resize the graphical representation of the system.
+
 In this tutorial we provide different simulations to show the main operator of ScaFi.
 For each YAML file in `src/main/yaml` a task `runFileName` will be created.
 
@@ -38,7 +40,9 @@ They will get cached in the user's home folder (as per Gradle normal behavior).
 ## Examples
 
 ```./gradlew runExample<N>```
-(where `<N>` is a number).
+(where `<N>` is a number)
+
+then, to **start** the simulation, press **`P`**.
 
 * **Example 1**: constant value
 * **Example 2**: constant expression
